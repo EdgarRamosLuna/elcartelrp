@@ -6,7 +6,7 @@ import axios from 'axios';
 export default function WhitelistLE(){
     const [datadb, setDataDb] = useState([]);
     useEffect(() => {
-        axios.get('/api/normativas/getdata').then(res =>{
+        axios.get('https://elcartelrp.herokuapp.com/api/normativas/getdata').then(res =>{
           //  console.log(res.data);
             setDataDb(res.data);
             }).catch(err =>{
