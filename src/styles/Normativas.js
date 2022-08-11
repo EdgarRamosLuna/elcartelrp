@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const Normativas = styled.div`
     background: #00000091;;
     max-width: 1333px;
-    margin-left: auto;
-    margin-right: auto;
     position: relative;
+    margin-left: auto;
+    height: 100%;
+    overflow-y: scroll;
     .main-content{
         margin-top: 80px;
         color: #fff;
