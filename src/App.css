@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -39,11 +40,13 @@
 
 html, body{
   height: 100%;
+  overflow-y: hidden;
 }
 .content{
   width: 100%;
   z-index: 1;
   position: relative;
+  height:100%;
 }
 #video{
   position: fixed;
@@ -54,11 +57,27 @@ html, body{
   top: 0;
   transform: translateX(calc((100% - 100vw) / 2));
 }
+#video2{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 150%;
+  min-height: 108%;
+  top: 0;
+  transform: translateX(calc((100% - 100vw) / 2)) translateY(-15%);
+  filter: grayscale(100);
+}
+
+
 .title{
   
 }
 h1,h2,h3,h4,h5{
   margin-bottom:0;
   margin-top:0;
-  line-height:55px
+  line-height:55px;
+  margin:0 !important;
+}
+#root{
+  height:100%;
 }

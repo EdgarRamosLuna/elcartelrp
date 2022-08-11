@@ -5,7 +5,7 @@ export const Header = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1666px;
+    max-width: 1100px;
     margin: auto;
     height: 80px;
     .logo {
@@ -14,7 +14,7 @@ export const Header = styled.div`
         top: 60px;
         left: -30px;
         z-index: 3;
-        cursor: url(assets/img/cursor.cur), auto;
+        cursor: url(/assets/img/cursor.cur), auto;
        
         img{
             width: 140px;
@@ -51,7 +51,7 @@ export const Header = styled.div`
         &:hover{
             color: #765aff;
             transition: 0.2s ease-in;
-            cursor: url(assets/img/cursor.cur), auto;
+            cursor: url(/assets/img/cursor.cur), auto;
         }
     }
     .fa-brands.fa-instagram {
@@ -59,7 +59,7 @@ export const Header = styled.div`
         &:hover{
             color: #ff00bf;
             transition: 0.2s ease-in;
-            cursor: url(assets/img/cursor.cur), auto;
+            cursor: url(/assets/img/cursor.cur), auto;
         }
     }
     .fa-brands.fa-youtube {
@@ -67,7 +67,7 @@ export const Header = styled.div`
         &:hover{
             color: red;
             transition: 0.2s ease-in;
-            cursor: url(assets/img/cursor.cur), auto;
+            cursor: url(/assets/img/cursor.cur), auto;
         }
     }
     .fa-brands.fa-twitter {
@@ -75,7 +75,7 @@ export const Header = styled.div`
         &:hover{
             color: #00dbff;
             transition: 0.1s ease-in;
-            cursor: url(assets/img/cursor.cur), auto;
+            cursor: url(/assets/img/cursor.cur), auto;
         }
     }
     .social-icons i {
@@ -95,4 +95,67 @@ export const Header = styled.div`
         } 
     }
     
+`;
+
+export const HeaderE = styled.div`
+    @font-face {
+        font-family: 'DZ';
+        src:url(/assets/fonts/dz.ttf);
+        /* other formats include: 'woff2', 'truetype, 'opentype',
+                                    'embedded-opentype', and 'svg' */
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9;
+    font-family: 'DZ';
+    width: 333px;
+    background: #000000b3;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    justify-content: start;
+    z-index: 100;
+    .menu-container {
+        width: auto;
+        display: flex;
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-direction: column;
+            text-align: left;
+            li {
+                margin: 25px 20px;
+                padding: 0;
+                a{
+                    color: #68ff00;
+                    font-size: 27px;
+                    text-decoration:none;
+                    transition:all 0.2s;
+                    cursor: url(/assets/img/cursor2.cur), auto;
+                    &:hover{
+                        color:#fff;
+                       
+                    }
+                }
+                .active{
+                    color:#fff;
+                    
+                }
+            }
+            
+        }
+    }
+    .logo img {
+        width: 70%;
+        cursor: url(/assets/img/cursor2.cur), auto;
+        transition:all 0.2s;
+        &:hover{
+            scale:0.9;
+            filter: drop-shadow(0 0 7px #fff);
+        }
+    }
 `;

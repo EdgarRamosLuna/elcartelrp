@@ -1,28 +1,40 @@
-import React from 'react'
-import { Normativas } from '../styles/Normativas'
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemHeading,
-    AccordionItemButton,
-    AccordionItemPanel,
-} from 'react-accessible-accordion';
-import 'react-accessible-accordion/dist/fancy-example.css';
-import CruzRoja from './normativas/CruzRoja';
-import Mecanico from './normativas/Mecanico';
-import Bandas from './normativas/Bandas';
+import React, { useState, useEffect } from 'react';
 
+import { AccordionD, Normativas } from '../styles/Normativas'
+import AccordionHook from './helpers/Accordion';
+import axios from 'axios';
 export default function Whitelist(){
+    const [datadb, setDataDb] = useState([]);
+    useEffect(() => {
+        axios.get('https://elcartelrp.herokuapp.com/api/normativas/getdata').then(res =>{
+          //  console.log(res.data);
+            setDataDb(res.data);
+            }).catch(err =>{
+                console.log(err);
+            });
+    }, []);
+    const listacat = datadb.map(normativa =>{
+        return(
+                <div key={normativa.idnor} className="item-container">
+                        <AccordionHook colorTxt={normativa.color} norName={normativa.title}>
+                            {normativa.content}
+                        </AccordionHook>
+                </div>
+            )
+    });
     return(
-        <Normativas>
-            <div className="main-content">
+            <Normativas>
+                <div className="main-content">
                 <div className="title">
                     <h1>Normativas</h1>
-                    <p>Si ya te has leído las normativas del servidor puedes Iniciar la evaluación para conseguir la Whitelist en nuestros servidores.</p>
-                
+                    <h5>Si ya te has leido las normativas del servidor puedes Iniciar la evaluacion para conseguir la Whitelist en nuestros servidores</h5>
+                    
                 </div>
                 <div className="content-nor">
-                <Accordion allowZeroExpanded>
+                {listacat}
+              
+
+               {/* <Accordion allowZeroExpanded>
                         <AccordionItem >
                             <AccordionItemHeading>
                                 <AccordionItemButton>
@@ -63,7 +75,7 @@ export default function Whitelist(){
                                     <Bandas/>
                             </AccordionItemPanel>
                         </AccordionItem>
-                </Accordion>
+                </Accordion>*/}
                 
                 </div>
             </div>

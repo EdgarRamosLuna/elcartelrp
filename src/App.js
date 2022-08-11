@@ -6,23 +6,35 @@ import Menu from './components/Menu';
 import Home from './components/Home';
 import Test from './components/Test';
 import Header from './components/Header';
+import HeaderE from './components/le/Header';
+import FooterE from './components/le/Footer';
+import HomeE from './components/le/Home';
 import Whitelist from './components/Whitelist';
+import Dashboard from './components/admin/Dashboard';
+import MenuDashboard from './components/admin/MenuDashboard';
+import Normativas from './components/admin/Normativas';
+import WhitelistLE from './components/le/Whitelist';
 
 function App() {
   return (
     <div className="App">
       
-      <video autoPlay muted loop id="video">
-        <source src="assets/video/bg.mp4" type="video/mp4"/>
-        </video>
+      
         
       <div className="content">
-        <Header />
-        <Menu />
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="test" element={<Test />} />
-          <Route path="whitelist" element={<Whitelist />} />
+          <Route path="/" element={<Header />}>
+            <Route path="test" element={<Test />} />
+            <Route path="whitelist" element={<Whitelist />} />
+          </Route>
+          <Route path="/los-encapuchados" element={<HomeE />}>
+            <Route path="multimedia" element={<Test />} />
+            <Route path="whitelist" element={<WhitelistLE />} />
+          </Route>
+          <Route path="/dashboard" element={<MenuDashboard />}>
+              <Route path="main" element={<Dashboard />} />
+              <Route path="normativas" element={<Normativas />} />
+          </Route>
         </Routes>
       </div>
     </div>

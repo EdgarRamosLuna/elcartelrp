@@ -2,11 +2,23 @@ import styled from "styled-components";
 
 export const Menu = styled.div`
     display: flex;
-    max-width: 1666px;
+    max-width: 1180px;
     margin: auto;
     width: 100%;
     justify-content: center;
     position:relative;
+    align-items: center;
+    flex-direction: column;
+    .logo {
+        position: relative;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+            height: 135px;
+        }
+    }
     a{
         width: auto;
         display: flex;
@@ -44,5 +56,13 @@ export const Menu = styled.div`
             transform: translate3d(4px, 0, 0);
         }
     }
-    
+    .item-container {
+        width: 90%;
+        margin: auto;
+    }
+    .menu-w {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 `;
