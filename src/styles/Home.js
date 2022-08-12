@@ -63,7 +63,7 @@ export const Button = styled.div`
    .btnScroll {
         position: fixed;
         width: 29px;
-        cursor: pointer;
+        cursor: none;
         transition: all ease-in 0.5s;
         
         img {
