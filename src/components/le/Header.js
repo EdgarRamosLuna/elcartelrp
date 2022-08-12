@@ -13,9 +13,9 @@ export default function Header(){
             </div>
             <div className="menu-container">
                 <ul>
-                    <li><Link to="multimedia" className={path == 'multimedia' ? "active": ""}>Fotos / Videos</Link></li>
                     <li><Link to="whitelist" className={path == 'whitelist' ? "active": ""}>Normativas</Link></li>
                     <li><Link to="whitelist" className={path == 'about' ? "active": ""} >Los Encapuchados RP</Link></li>
+                    <li><Link to="multimedia" className={path == 'multimedia' ? "active": ""}>Fotos / Videos</Link></li>
                     <li><Link to="whitelist">Donaciones</Link></li>
                 </ul>
             </div>
