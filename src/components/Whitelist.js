@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { AccordionD, Normativas } from '../styles/Normativas'
 import AccordionHook from './helpers/Accordion';
 import axios from 'axios';
+import ScrollTop from './helpers/ScrollTop';
 export default function Whitelist(){
     const [datadb, setDataDb] = useState([]);
     useEffect(() => {
@@ -22,8 +23,15 @@ export default function Whitelist(){
                 </div>
             )
     });
+    
+ /*   const scrolTop = () =>{
+        const scrolled = document.querySelector(`#normativas`);
+        console.log(scrolled);
+    }
+    scrolTop();*/
     return(
-            <Normativas>
+            <Normativas id="normativas">
+                
                 <div className="main-content">
                 <div className="title">
                     <h1>Normativas</h1>
@@ -33,7 +41,7 @@ export default function Whitelist(){
                 <div className="content-nor">
                 {listacat}
               
-
+                
                {/* <Accordion allowZeroExpanded>
                         <AccordionItem >
                             <AccordionItemHeading>
@@ -78,6 +86,7 @@ export default function Whitelist(){
                 </Accordion>*/}
                 
                 </div>
+                <ScrollTop idView={"normativas"} />
             </div>
         </Normativas>
     )

@@ -50,3 +50,30 @@ export const WelcomeS = styled.div`
         
     }
 `;
+export const Button = styled.div`
+   position:absolute;
+   width: auto;
+   right: 3%;
+   bottom: 10px;
+   height: 40px;
+   font-size: 0.8rem;
+   z-index: 1;
+   
+   color: green;
+   .btnScroll {
+        display: block !important;
+        position: fixed;
+        width: 29px;
+        cursor: pointer;
+        transition: all ease-in 0.5s;
+        
+        img {
+            width: 100%;
+            transition: all ease-in 0.5s;
+            &:hover{
+                transition: all ease-in 0.9s;
+                transform:rotate(360deg) ;
+            }
+        }
+    }
+`
