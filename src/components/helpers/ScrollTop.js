@@ -3,7 +3,7 @@ import { Button } from '../../styles/Home';
 
   
 const ScrollTop = (props) =>{
-  const {idView} = props;
+  const {idView,scrollI} = props;
   const [visible, setVisible] = useState(false)
   const id = idView;
   const toggleVisible = () => {
@@ -38,7 +38,8 @@ const ScrollTop = (props) =>{
     <Button>
      <div className="btnScroll" onClick={scrollToTop} 
      style={{display: visible ? 'block' : 'none'}}>
-      <img src="/assets/img/scrollTop.png" alt="" />
+        {scrollI == 1 ? <img src="/assets/img/scrollTop.png" alt="" />:<img src="/assets/img/zh.png" alt="" />}
+      
      </div>
     </Button>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AccordionD } from '../../styles/Normativas';
 
 export default function AccordionHook (props){
-    const {children, colorTxt, norName} = props;
+    const {children, colorTxt, norName, cursorC} = props;
     let datacolor = "red";
     const [status, setStatus] = useState(false);
     const showData = () =>{
@@ -12,7 +12,7 @@ export default function AccordionHook (props){
     
     return(
 
-        <AccordionD dataColor={colorTxt}>
+        <AccordionD dataColor={colorTxt} cursorC={cursorC}>
                         <div className="nor-items">
                             <div className="nor-item">
                                 <div className="nor-btn"  >

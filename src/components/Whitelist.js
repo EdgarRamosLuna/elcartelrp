@@ -17,7 +17,7 @@ export default function Whitelist(){
     const listacat = datadb.map(normativa =>{
         return(
                 <div key={normativa.idnor} className="item-container">
-                        <AccordionHook colorTxt={normativa.color} norName={normativa.title}>
+                        <AccordionHook colorTxt={normativa.color} norName={normativa.title} cursorC={1}>
                             {normativa.content}
                         </AccordionHook>
                 </div>
@@ -30,7 +30,7 @@ export default function Whitelist(){
     }
     scrolTop();*/
     return(
-            <Normativas id="normativas">
+            <Normativas >
                 
                 <div className="main-content">
                 <div className="title">
@@ -38,7 +38,7 @@ export default function Whitelist(){
                     <h5>Si ya te has leido las normativas del servidor puedes Iniciar la evaluacion para conseguir la Whitelist en nuestros servidores</h5>
                     
                 </div>
-                <div className="content-nor">
+                <div className="content-nor" id="normativas">
                 {listacat}
               
                 
@@ -86,7 +86,7 @@ export default function Whitelist(){
                 </Accordion>*/}
                 
                 </div>
-                <ScrollTop idView={"normativas"} />
+                <ScrollTop idView={"normativas"} scrollI={1} />
             </div>
         </Normativas>
     )

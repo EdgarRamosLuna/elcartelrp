@@ -6,60 +6,7 @@ export const Normativas = styled.div`
     position: relative;
     margin:0 auto;
     height: 70%;
-    overflow-y: scroll;
-    .main-content{
-        margin-top: 80px;
-        color: #fff;
-        font-size: 22px;
-        padding: 33px 0;
-    }
-    .content-nor {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        padding: 0 120px;
-    }
-    .normativa-info{
-        p{
-            white-space:pre-line;
-            padding: 0 30px;
-        }
-    }
-    .accordion__button{
-        background:none;
-        color:#fff;
-        display:flex;
-        align-items: center;
-        padding:0;
-        &::before{
-            filter: drop-shadow(0 0 7px #f7ff00);
-        }
-    }
-    .accordion{
-        border:none;
-    }
-    .nor-btn-txt{
-        text-transform: capitalize;
-    }
-    .txt-y{
-        color:#f7ff00;
-    }
-    .txt-r{
-        color: #f2120c;
-    }
-    .txt-b{
-        color: #1054f5;
-    }
-    
-  /*filter: drop-shadow(1px 0 11px #f7ff00);*/
-`;
-export const NormativasLE = styled.div`
-    background: #000000e3;
-    max-width: calc(100% - 333px);
-    position: relative;
-    margin-left: auto;
-    height: 100%;
-    overflow-y: scroll;
+    overflow-y: hidden;
     cursor: url(/assets/img/cursor.cur), auto;
     .main-content{
         color: #fff;
@@ -72,6 +19,8 @@ export const NormativasLE = styled.div`
         flex-direction: column;
         text-align: left;
         padding: 0 120px;
+        overflow-y: scroll;
+        height: 100%;
     }
     .normativa-info{
         p{
@@ -104,13 +53,91 @@ export const NormativasLE = styled.div`
     .txt-b{
         color: #1054f5;
     }
-    
+    .title{
+        margin:25px 0;
+    }
+  /*filter: drop-shadow(1px 0 11px #f7ff00);*/
+`;
+export const NormativasLE = styled.div`
+    background: #000000e3;
+    max-width: calc(100% - 333px);
+    position: relative;
+    margin-left: auto;
+    height: 100%;
+    overflow-y: hidden;
+    cursor: url(/assets/img/cursor21.cur), auto;
+    .main-content{
+        color: #fff;
+        font-size: 22px;
+        padding: 33px 0;
+        height: 100%;
+    }
+    .content-nor {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 0 120px;
+        overflow-y: scroll;
+        height: 80%;
+    }
+    .normativa-info{
+        p{
+            white-space:pre-line;
+            padding: 0 30px;
+        }
+    }
+    .accordion__button{
+        background:none;
+        color:#fff;
+        display:flex;
+        align-items: center;
+        padding:0;
+        &::before{
+            filter: drop-shadow(0 0 7px #f7ff00);
+        }
+    }
+    .accordion{
+        border:none;
+    }
+    .nor-btn-txt{
+        text-transform: capitalize;
+    }
+    .txt-y{
+        color:#f7ff00;
+    }
+    .txt-r{
+        color: #f2120c;
+    }
+    .txt-b{
+        color: #1054f5;
+    }
+    .title{
+        margin:25px 0;
+    }
+    .title i {
+        color: #e5ed00;
+        transition:all ease-in 0.2s;
+        &:hover{
+            transition:all ease-in 0.2s;
+            color:red;
+            scale:1.3;
+            cursor: url(/assets/img/cursor2.cur), auto;
+        }
+    }
+    .title h5 {
+        margin: 29px 0 !important;
+    }
   /*filter: drop-shadow(1px 0 11px #f7ff00);*/
 `;
 export const AccordionD = styled.div`
     width:90%;
     margin:0 auto;
-    cursor: url(/assets/img/cursor.cur), auto;
+    cursor:url(/assets/img/${props => props.cursorC == 1 ? "cursor.cur":"cursor.cur"}), auto21;
+    
+    
+ /*   &:before{
+        content:'${props => props.cursorC ? props.cursorC : props.cursorC}' ;
+    }*/
     .nor-items {
         display: flex;
     }
@@ -119,7 +146,7 @@ export const AccordionD = styled.div`
         flex-direction: column;
         margin: 10px 0;
         width:100%;
-        cursor: url(/assets/img/cursor.cur), auto;
+        cursor:url(/assets/img/${props => props.cursorC == 1 ? "cursor.cur":"cursor21.cur"}), auto;
     }
     .nor-item-data {
         display: none;
@@ -140,7 +167,7 @@ export const AccordionD = styled.div`
         align-items: center;
         gap: 10px;
 
-        cursor: url(/assets/img/cursor.cur), auto;
+        cursor:url(/assets/img/${props => props.cursorC == 1 ? "cursor.cur":"cursor21.cur"}), auto;
         i{
             color:${props => props.dataColor};
             
@@ -151,7 +178,13 @@ export const AccordionD = styled.div`
         align-items: center;
         gap: 10px;
         display: flex;
-        cursor: url(/assets/img/cursor.cur), auto;
+        cursor:url(/assets/img/${props => props.cursorC == 1 ? "cursor.cur":"cursor21.cur"}), auto;
+        &:hover{
+
+            transition:all ease-in 0.2s;
+            cursor:url(/assets/img/${props => props.cursorC == 1 ? "cursor.cur":"cursor2.cur"}), auto;
+           
+        }
     }
     .normal{
         transition: all 0.1s;
@@ -159,5 +192,8 @@ export const AccordionD = styled.div`
     .rotate {
         transform: rotate(90deg);
         transition: all 0.1s;
+    }
+    .title h5 {
+        margin: 29px 0 !important;
     }
 `;
