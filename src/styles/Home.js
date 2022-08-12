@@ -68,10 +68,11 @@ export const Button = styled.div`
         
         img {
             width: 100%;
-            transition: all ease-in 0.5s;
+            transition: all ease-in 0.3s;
+            transform:rotate(180deg); 
             &:hover{
-                transition: all ease-in 0.9s;
-                transform:rotate(360deg) ;
+                transition: all ease-in 0.4s;
+                transform:rotate(0deg) ;
             }
         }
     }
