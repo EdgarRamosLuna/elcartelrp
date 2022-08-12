@@ -37,7 +37,7 @@ const ScrollTop = (props) =>{
   return (
     <Button>
      <div className="btnScroll" onClick={scrollToTop} 
-     style={{display: visible ? 'flex' : 'none'}}>
+     style={{display: visible ? 'block' : 'none'}}>
       <img src="/assets/img/scrollTop.png" alt="" />
      </div>
     </Button>

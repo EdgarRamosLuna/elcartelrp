@@ -61,7 +61,6 @@ export const Button = styled.div`
    
    color: green;
    .btnScroll {
-        display: block !important;
         position: fixed;
         width: 29px;
         cursor: pointer;
