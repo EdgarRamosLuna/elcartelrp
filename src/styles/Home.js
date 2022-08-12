@@ -53,8 +53,8 @@ export const WelcomeS = styled.div`
 export const Button = styled.div`
    position:absolute;
    width: auto;
-   right: 3%;
-   bottom: 10px;
+   right: 39px;
+   bottom: 39px;
    height: 40px;
    font-size: 0.8rem;
    z-index: 1;
