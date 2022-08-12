@@ -60,6 +60,7 @@ export const NormativasLE = styled.div`
     margin-left: auto;
     height: 100%;
     overflow-y: scroll;
+    cursor: url(assets/img/cursor.cur), auto;
     .main-content{
         color: #fff;
         font-size: 22px;
@@ -109,6 +110,7 @@ export const NormativasLE = styled.div`
 export const AccordionD = styled.div`
     width:90%;
     margin:0 auto;
+    cursor: url(assets/img/cursor.cur), auto;
     .nor-items {
         display: flex;
     }
@@ -117,7 +119,7 @@ export const AccordionD = styled.div`
         flex-direction: column;
         margin: 10px 0;
         width:100%;
-        cursor: pointer;
+        cursor: url(assets/img/cursor.cur), auto;
     }
     .nor-item-data {
         display: none;
@@ -137,7 +139,7 @@ export const AccordionD = styled.div`
         width: 100%;
         align-items: center;
         gap: 10px;
-        cursor: pointer;
+
         cursor: url(assets/img/cursor.cur), auto;
         i{
             color:${props => props.dataColor};
@@ -149,7 +151,7 @@ export const AccordionD = styled.div`
         align-items: center;
         gap: 10px;
         display: flex;
-        cursor: pointer;
+        cursor: url(assets/img/cursor.cur), auto;
     }
     .normal{
         transition: all 0.1s;
