@@ -14,9 +14,9 @@ export default function Header(){
             <div className="menu-container">
                 <ul>
                     <li><Link to="multimedia" className={path == 'multimedia' ? "active": ""}>Fotos / Videos</Link></li>
-                    <li><Link to="whitelist" className={path == 'whitelist' ? "active": ""}>Whitelist /  Normativas</Link></li>
-                    <li><Link to="/los-encapuchados/about" className={path == 'about' ? "active": ""} >Los Encapuchados RP</Link></li>
-                    <li><Link to="/los-encapuchados/donate">Donaciones</Link></li>
+                    <li><Link to="whitelist" className={path == 'whitelist' ? "active": ""}>Normativas</Link></li>
+                    <li><Link to="whitelist" className={path == 'about' ? "active": ""} >Los Encapuchados RP</Link></li>
+                    <li><Link to="whitelist">Donaciones</Link></li>
                 </ul>
             </div>
         </HeaderE>
