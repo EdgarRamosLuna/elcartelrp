@@ -4,7 +4,7 @@ export const Normativas = styled.div`
     background: #00000091;;
     max-width: 1333px;
     position: relative;
-    margin-left: auto;
+    margin:0 auto;
     height: 100%;
     overflow-y: scroll;
     .main-content{
