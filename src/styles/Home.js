@@ -56,10 +56,11 @@ export const WelcomeS = styled.div`
         color: #fff;
         align-items: center;
         position: relative;
-      
+        margin-left:auto ;
         width: calc(100% - 333px);
         @media(max-width:720px){
             width: calc(100%);
+            margin-left:unset;
         }
         
     }
