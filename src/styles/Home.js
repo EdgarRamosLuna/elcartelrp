@@ -17,6 +17,9 @@ export const HomeE = styled.div`
     }
     cursor: url(/assets/img/cursor21.cur), auto;
     height:100%;
+    @media(max-width:720px){
+        overflow-y: scroll;
+    }
     .video-container{
         width: 100%;
         position: fixed;
@@ -36,17 +39,22 @@ export const HomeE = styled.div`
     
 `;
 export const WelcomeS = styled.div`
-    .content {
+    width: 100%;
+    display: flex;
+    z-index: 12;
+    position: relative;
+    text-align: center;
+    height: 89%;
+    align-items: center;
+    justify-content: center;
+    .content-home {
         z-index: 9;
         display: flex;
         justify-content: center;
         margin: 60px 0;
         color: #fff;
-        height: 50vh;
         align-items: center;
-        max-width: calc(100% - 333px);
         position: relative;
-        margin-left: auto;
         
     }
 `;

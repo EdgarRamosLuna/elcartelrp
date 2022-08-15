@@ -21,7 +21,6 @@ export default function Home(){
           <Header />
             {path == "los-encapuchados" && <Welcome />}
             <Outlet />
-          <Footer />
         </HomeE>
     )
 }

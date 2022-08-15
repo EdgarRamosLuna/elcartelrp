@@ -1,21 +1,27 @@
 import styled from 'styled-components';
 
 export const Header = styled.div`
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 1100px;
     margin: auto;
     height: 80px;
+    position: relative;
+    z-index: 10;
+    @media(max-width:680px){
+        height: auto;
+    }
     .logo {
         width: auto;
         position: relative;
         top: 60px;
         left: -30px;
         z-index: 3;
+        flex-wrap:wrap;
         cursor: url(/assets/img/cursor.cur), auto;
-       
+        
         img{
             width: 140px;
             &:hover{
@@ -30,20 +36,27 @@ export const Header = styled.div`
         }
     }
     .social {
-        width: 30%;
+        width: 100%;
         display: flex;
         justify-content: center;
         gap: 90px;
         position: relative;
-        margin-right: 20%;
-        margin-left: 12%;
-        
+        flex-wrap:wrap;
+        @media(max-width:680px){
+            width:90%;
+            gap: unset;
+        }
     }
     .social-icons {
         display: flex;
         color: rgb(247, 255, 0);
         a{
             
+        }
+        @media(max-width:680px){
+            margin:15px 0;
+            width: 20%;
+            justify-content: center;
         }
     }
     .fa-brands.fa-twitch {
@@ -94,7 +107,33 @@ export const Header = styled.div`
             transform:rotate(360deg); 
         } 
     }
-    
+    .content{
+
+        &:before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:#000;
+            opacity: 0.3;
+            left: 0;
+            z-index: 6;
+        }
+        @media(max-width:680px) {
+            overflow-y: scroll;
+            &:before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background:#000;
+                opacity: 0.3;
+                left: 0;
+                z-index: 6;
+            }
+        }
+    }
+   
 `;
 
 export const HeaderE = styled.div`
@@ -117,9 +156,15 @@ export const HeaderE = styled.div`
     height: 100%;
     justify-content: start;
     z-index: 100;
+    @media(max-width:720px){
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
     .menu-container {
         width: auto;
         display: flex;
+        
         ul {
             display: flex;
             list-style: none;
@@ -127,6 +172,9 @@ export const HeaderE = styled.div`
             margin: 0;
             flex-direction: column;
             text-align: left;
+            @media(max-width:720px){
+                text-align: center;
+            }
             li {
                 margin: 25px 20px;
                 padding: 0;
@@ -156,6 +204,43 @@ export const HeaderE = styled.div`
         &:hover{
             scale:0.9;
             filter: drop-shadow(0 0 7px #fff);
+        }
+    }
+    .logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            @media(max-width:720px){
+                width: 30%;
+                display: flex;
+            }
+            
+        }
+    }
+    .btn-open {
+        margin-right: 15px;
+        font-size: 3em;
+        color: #08ff00;
+        display:none;
+        @media(max-width:720px){
+            display:block;
+        }
+    }
+    .web-menu{
+        @media(max-width:720px){
+            display:none !important;
+        }
+    }
+    .opacity-full{
+        opacity: 1 !important;
+    }
+    .mobile-menu{
+        display:none !important;
+        opacity:0;
+        @media(max-width:720px){
+            display:flex !important;
         }
     }
 `;

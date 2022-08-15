@@ -7,7 +7,11 @@ export const Normativas = styled.div`
     margin:0 auto;
     height: 70%;
     overflow-y: hidden;
+    z-index: 9;
     cursor: url(/assets/img/cursor.cur), auto;
+    @media(max-width:720px){
+        max-width: 100%;
+    }
     .main-content{
         color: #fff;
         font-size: 22px;
@@ -21,6 +25,9 @@ export const Normativas = styled.div`
         padding: 0 120px;
         overflow-y: scroll;
         height: 100%;
+        @media(max-width:720px){
+            padding: 0 30px;
+        }
     }
     .normativa-info{
         p{
@@ -66,6 +73,11 @@ export const NormativasLE = styled.div`
     height: 100%;
     overflow-y: hidden;
     cursor: url(/assets/img/cursor21.cur), auto;
+    @media(max-width:720px){
+        max-width: calc(100%);
+        height: 100%;
+        z-index: 9;
+    }
     .main-content{
         color: #fff;
         font-size: 22px;
@@ -78,7 +90,10 @@ export const NormativasLE = styled.div`
         text-align: left;
         padding: 0 120px;
         overflow-y: scroll;
-        height: 80%;
+        height: 100%;
+        @media(max-width:720px){
+            padding: 0 30px;
+        }
     }
     .normativa-info{
         p{
@@ -126,6 +141,9 @@ export const NormativasLE = styled.div`
     }
     .title h5 {
         margin: 29px 0 !important;
+        @media(max-width:720px){    
+            margin: 29px !important;
+        }
     }
   /*filter: drop-shadow(1px 0 11px #f7ff00);*/
 `;

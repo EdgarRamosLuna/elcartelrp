@@ -9,12 +9,17 @@ export const Menu = styled.div`
     position:relative;
     align-items: center;
     flex-direction: column;
+    z-index: 10;
+    @media(max-width:1180px){
+        max-width: 100%;
+    }
     .logo {
         position: relative;
         left: 0;
         width: 100%;
         display: flex;
         justify-content: center;
+        flex-wrap:wrap-reverse;
         img {
             height: 135px;
         }
@@ -64,5 +69,10 @@ export const Menu = styled.div`
         width: 100%;
         display: flex;
         justify-content: center;
+        flex-wrap:wrap ;
+        margin:15px 0;
+        @media(max-width:680px){
+            flex-wrap:wrap ;
+        }
     }
 `;

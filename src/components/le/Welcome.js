@@ -4,7 +4,7 @@ import { WelcomeS } from '../../styles/Home';
 export default function Welcome(){
     return(
         <WelcomeS>
-            <div className="content">
+            <div className="content-home">
                 <h1>Bienvenido a Los Encapuchados RP</h1>
             </div>  
         </WelcomeS>
