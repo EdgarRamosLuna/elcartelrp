@@ -13,10 +13,10 @@ export default function Menu(){
                 <Link to="/los-encapuchados"><img src="assets/img/logoe.png" alt="" /></Link>
             </div>
             <div className="menu-w">
-                <Link to="/whitelist"><img src="/assets/images/settings.svg" alt="" />Whitelist / Normativas</Link>
-                <Link to="/test"><img src="/assets/images/settings.svg" alt="" />El Cartel RP</Link>
-                <Link to="/"><img src="/assets/images/settings.svg" alt="" />Fotos {'&'} Videos</Link>
-                <Link to="/test"><img src="/assets/images/settings.svg" alt="" />Donaciones</Link> 
+                <Link to="/whitelist">Whitelist / Normativas</Link>
+                <Link to="/test">El Cartel RP</Link>
+                <Link to="/">Fotos {'&'} Videos</Link>
+                <Link to="/test">Donaciones</Link> 
             </div>
             
         </StyledMenu>
