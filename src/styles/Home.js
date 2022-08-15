@@ -39,7 +39,7 @@ export const HomeE = styled.div`
     
 `;
 export const WelcomeS = styled.div`
-    width: 100%;
+
     display: flex;
     z-index: 12;
     position: relative;
@@ -47,6 +47,7 @@ export const WelcomeS = styled.div`
     height: 89%;
     align-items: center;
     justify-content: center;
+    
     .content-home {
         z-index: 9;
         display: flex;
@@ -55,6 +56,11 @@ export const WelcomeS = styled.div`
         color: #fff;
         align-items: center;
         position: relative;
+      
+        width: calc(100% - 333px);
+        @media(max-width:720px){
+            width: calc(100%);
+        }
         
     }
 `;
