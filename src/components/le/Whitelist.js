@@ -7,7 +7,7 @@ import ScrollTop from '../helpers/ScrollTop';
 export default function WhitelistLE(){
     const [datadb, setDataDb] = useState([]);
     useEffect(() => {
-        axios.get('https://elcartelrp.herokuapp.com/api/normativas/getdata').then(res =>{
+        axios.get('https://elcartelrp.herokuapp.com/api/normativasle/getdata').then(res =>{
           //  console.log(res.data);
             setDataDb(res.data);
             }).catch(err =>{
@@ -30,7 +30,6 @@ export default function WhitelistLE(){
                     <h1>Normativas</h1>
                     <i class="fa-solid fa-biohazard"></i>
                     <h5>Si ya te has leido las normativas del servidor puedes Iniciar la evaluacion para conseguir la Whitelist en nuestros servidores</h5>
-                    
                 </div>
                 <div className="content-nor" id="normativas">
                 {listacat}

@@ -15,7 +15,7 @@ export const MenuDash = styled.div`
         text-decoration: none;
     }
     .dashboard-menu {
-        width: 200px;
+        width: 300px;
         height: 100vh;
         background: #261926;
         display: flex;
@@ -41,6 +41,7 @@ export const MenuDash = styled.div`
         }
         a {
             color: #fff;
+            white-space: pre;
         }
     }
     .dashboard::before {

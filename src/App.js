@@ -14,7 +14,7 @@ import Dashboard from './components/admin/Dashboard';
 import MenuDashboard from './components/admin/MenuDashboard';
 import Normativas from './components/admin/Normativas';
 import WhitelistLE from './components/le/Whitelist';
-
+import NormativasLE from './components/admin/le/Normativas';
 function App() {
   return (
     <div className="App">
@@ -34,6 +34,7 @@ function App() {
           <Route path="/dashboard" element={<MenuDashboard />}>
               <Route path="main" element={<Dashboard />} />
               <Route path="normativas" element={<Normativas />} />
+              <Route path="normativasle" element={<NormativasLE />} />
           </Route>
         </Routes>
       </div>

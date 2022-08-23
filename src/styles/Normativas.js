@@ -24,7 +24,7 @@ export const Normativas = styled.div`
         text-align: left;
         padding: 0 120px;
         overflow-y: scroll;
-        height: 100%;
+        height: 80%;
         @media(max-width:720px){
             padding: 0 30px;
         }
@@ -90,7 +90,7 @@ export const NormativasLE = styled.div`
         text-align: left;
         padding: 0 120px;
         overflow-y: scroll;
-        height: 100%;
+        height: 80%;
         @media(max-width:720px){
             padding: 0 30px;
         }

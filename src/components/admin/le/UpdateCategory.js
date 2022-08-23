@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, ModalCat } from '../../styles/Categories';
+import { Button, ModalCat } from '../../../styles/Categories';
 import axios from 'axios';
 export default function UpdateCategory(props){
     const {closeModal, idNor, newData} = props;
@@ -8,7 +8,7 @@ export default function UpdateCategory(props){
     const [color, setColor] = useState('');
 
     useEffect(() => {
-        axios.post('https://elcartelrp.herokuapp.com/api/normativas/getnordata', {idnor: idNor}).then(res =>{
+        axios.post('https://elcartelrp.herokuapp.com/api/normativasle/getnordata', {idnor: idNor}).then(res =>{
             const categoryData = res.data[0];
             setTitulo(categoryData.title);
             setCont(categoryData.content);
@@ -32,7 +32,7 @@ export default function UpdateCategory(props){
                 content: cont,
                 color:color,
             }
-            axios.post('https://elcartelrp.herokuapp.com/api/normativas/update', normativa)
+            axios.post('https://elcartelrp.herokuapp.com/api/normativasle/update', normativa)
             .then(res => {
                 alert(res.data);
                 hideModal();
@@ -66,7 +66,7 @@ export default function UpdateCategory(props){
                             </div>
                             <div className="cat-form-input">
                                 <label htmlFor="color">Color</label>
-                                <input type="text" id="color" value={color} onChange={(e)=> {setColor(e.target.value)}} />
+                                <center><input type="color" id="head" name="head" value={color} onChange={(e) => {setColor(e.target.value)}}></input></center>
                             </div>
                             <div className="cat-form-input">
                                 <Button onClick={editarNor}>Guardar Categoria</Button>

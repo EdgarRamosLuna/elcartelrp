@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, Outlet } from "react-router-dom";
-import { Button, CategoriesS, ConfirmModal } from '../../styles/Categories';
+import { Button, CategoriesS, ConfirmModal } from '../../../styles/Categories';
+import { TaskContext } from '../../context/TaskContext';
 import Add from './Add';
 import CatTable from './catTable';
 import UpdateCategory from './UpdateCategory';
-
 export default function Normativas(){
     const [showCat, setShowCat] = useState(false);
     const [idNor, setIdNor] = useState();
     const [newDatadb, setNewDatadb] = useState();
+    //const {Confirm, setImgCont, imgCont,} = useContext(TaskContext);
     const showModal = () =>{
         setShowCat(true)
     }
@@ -64,10 +65,11 @@ export default function Normativas(){
         <>
             { showCat && <Add closeModal={hideModalCat} newData={newData} />} 
             { showUCat && <UpdateCategory closeModal={hideModalUCat} idNor={idNor} newData={newData} />} 
+            { showCon && <Confirm>Estas seguro que deseas borrar esta normativa?</Confirm>} 
             <CategoriesS>
             
                 <div className="cat-container">
-                    <h1>Normativas El Cartel 24/7</h1>
+                    <h1>Normativas Los Encapuchados RP</h1>
                     <div className="cat-btn">
                         <Button onClick={showModal}>Agregar Normativa</Button>
                     </div>

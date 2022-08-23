@@ -20,7 +20,7 @@ export default function Home(){
           </div>
           <Header />
             {path == "los-encapuchados" && <Welcome />}
-            <Outlet />
+          <Outlet />
         </HomeE>
     )
 }

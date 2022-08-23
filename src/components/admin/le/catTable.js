@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import {Link} from "react-router-dom";
 import { Col, Row, Table } from "react-bootstrap";
 import axios from 'axios';
@@ -11,6 +11,7 @@ import {
   TableBody,
   TableHeader
 } from "react-bs-datatable";
+import { TaskContext } from "../../context/TaskContext";
 
 
 // Create table headers consisting of 4 columns.
@@ -34,12 +35,28 @@ const STORY_HEADERS = [
 ];
 
 // Then, use it in a component.
+
 export default function CatTable(props) {
-  const {editBtn, newData} = props;
+  const {editBtn, newData, showCont, confirm, } = props;
   const [dataNor, setDataNor] = useState([]);
+  const [idnor, setIdnor] = useState();
+  const {removeImg, setImgCont, imgCont,} = useContext(TaskContext);
   useEffect(() => {
-        axios.get('https://elcartelrp.herokuapp.com/api/normativas/getdata').then(res =>{
-           // console.log(res.data);
+        axios.get('https://elcartelrp.herokuapp.com/api/normativasle/getdata').then(res =>{
+          console.log(confirm);
+            if(confirm == true){
+          
+              axios.post('https://elcartelrp.herokuapp.com/api/normativasle/delete', {idnor:idnor}).then(res =>{
+                  
+                  setDataNor(prev=>{
+                      return prev.filter(usuario=>usuario.idnor!=idnor) 
+                  });
+                  showCont(false);
+                }).catch(err =>{
+                    console.log(err);
+                });
+            
+            }
             setDataNor(res.data);
         }).catch(err =>{
             console.log(err);
@@ -47,17 +64,20 @@ export default function CatTable(props) {
   }, [newData]);
 
   const data = [{}];
-  const borrarCat = (idcat) =>{
-    console.log(idcat);
-    alert(`categoria con el id ${idcat} borrada`);
+  const showConfirm = (idcat) =>{
+   // console.log(idcat);
+    showCont(true);
+    setIdnor(idcat);
   }
+
+  
   for (let i = 0; i < dataNor.length; i++) {
     
     const idnor = dataNor[i].idnor;
     const title = dataNor[i].title;
     const content = dataNor[i].content;
     const color = dataNor[i].color;
-    const btnActions = <div className="btnActionsCont"><button className="btnEdit" type="button" onClick={()=> editBtn(idnor)}><i class="fa-solid fa-pen-to-square"></i></button><button type="button" onClick={() => borrarCat(idnor)} className="btnDel"><i class="fa-solid fa-trash"></i></button></div>;
+    const btnActions = <div className="btnActionsCont"><button className="btnEdit" type="button" onClick={()=> editBtn(idnor)} ><i class="fa-solid fa-pen-to-square"></i></button><button type="button" onClick={() => showConfirm(idnor)} className="btnDel"><i class="fa-solid fa-trash"></i></button></div>;
     data.push({"title":title, "content":content, "color":color,"btnActions":btnActions});
   }
   data.shift();
@@ -72,6 +92,7 @@ export default function CatTable(props) {
           options: [5, 10, 15, 20]
         }
       }}
+      showCon
     >
       <Row className="mb-4 p-2">
         <Col

@@ -18,7 +18,6 @@ export default function Menu(){
                 <Link to="/">Fotos {'&'} Videos</Link>
                 <Link to="/test">Donaciones</Link> 
             </div>
-            
         </StyledMenu>
     )
 }

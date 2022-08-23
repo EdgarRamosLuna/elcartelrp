@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ModalCat } from '../../styles/Categories';
+import { Button, ModalCat } from '../../../styles/Categories';
 import axios from 'axios';
 import uniqid from 'uniqid';
 export default function Add(props){
@@ -21,7 +21,7 @@ export default function Add(props){
             content: cont,
             color:color,
         }
-        axios.post('https://elcartelrp.herokuapp.com/api/normativas/add', normativa)
+        axios.post('https://elcartelrp.herokuapp.com/api/normativasle/add', normativa)
         .then(res => {
             alert(res.data);
             hideModal();
@@ -44,7 +44,7 @@ export default function Add(props){
                     <div className="btn-modal-close">
                         <button onClick={hideModal}><i className="fa-solid fa-xmark"></i></button>
                     </div>
-                    <h1>Agregar Nueva Normativa</h1>
+                    <h1>Agregar Nueva Normativa Los Encapuchados RP</h1>
                     <div className="cat-container">
                         <div className="cat-form">
                             <div className="cat-form-input">
@@ -56,19 +56,9 @@ export default function Add(props){
                                 <textarea id="desc" value={cont} onChange={(e)=> {setCont(e.target.value)}}></textarea>
                             </div>
                             <div className="cat-form-input">
-                                <label htmlFor="titulo">Color</label>
-                                
-                                <select>
-                                    <option value="0" selected>Selecciona un color</option>
-                                    <option value="#f7ff00">Amarillo</option>
-                                    <option value="#f2120c">Rojo</option>
-                                    <option value="#1054f5">Azul</option>
-                                    <option value="#00c3ff">Azul2</option>
-                                    <option value="#68ff00">Verde</option>
-                                </select>
-                                <input type="color" id="head" name="head" value={color} onChange={(e) => {setColor(e.target.value)}}></input>
+                                <label htmlFor="titulo">Selecciona un color</label>
+                                <center><input type="color" id="head" name="head" value={color} onChange={(e) => {setColor(e.target.value)}}></input></center>
                             </div>
-                            
                             <div className="cat-form-input">
                                 <Button onClick={guardarCategoria}>Guardar Categoria</Button>
                             </div>

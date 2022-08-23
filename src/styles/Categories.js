@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const CategoriesS = styled.div`
     
-    width: calc(100% - 200px);
+    width: calc(100% - 300px);
     box-sizing: border-box;
-    padding:0 35px;
-    margin-left:200px;
+    padding: 0 35px;
+    margin-left: 300px;
     .cat-container {
         display: flex;
         flex-direction: column;
@@ -91,7 +91,8 @@ export const ModalCat = styled.div`
     .cat-form {
         display: flex;
         flex-direction: column;
-        width: 500px;
+        width: 100%;
+        min-width:500px;
     }
     .cat-form-input {
         display: flex;
@@ -191,6 +192,58 @@ export const ModalCat = styled.div`
             left: 22px;
             top: -4px;
             color: #553855;
+        }
+    }
+`; 
+
+export const ConfirmModal = styled.div`
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .confirmCont {
+        width: auto;
+        box-sizing: border-box;
+        padding: 25px;
+        background: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: end;
+        max-width: 600px;
+    }
+    .confirmTxt {
+        width: 100%;
+    }
+    .confirmBtns{
+        width: 90%;
+        display: flex;
+        justify-content: end;
+        margin: 20px auto;
+        gap: 20px;
+        button{
+            border:0;
+            color:#fff;
+            padding: 5px;
+            box-sizing:border-box ;
+            width:130px;
+        }
+    }
+    .confirmTrue {
+        display: flex;
+        background: #2da402;
+        button{
+            background: inherit;
+        }
+    }
+    .confirmFalse {
+        display: flex;
+        background: red;
+        button{
+            background: inherit;
         }
     }
 `;
