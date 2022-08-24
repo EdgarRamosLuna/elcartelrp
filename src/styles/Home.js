@@ -92,3 +92,16 @@ export const Button = styled.div`
         }
     }
 `
+export const DiscordBtnS = styled.div`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 1px 1px 1px #007826;
+    background: #015b1d;
+    bottom: 0;
+    img {
+        width: 100%;
+        max-width: 15%;
+        filter: invert(100%);
+    }
+`;

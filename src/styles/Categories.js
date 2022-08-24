@@ -224,6 +224,7 @@ export const ConfirmModal = styled.div`
         justify-content: end;
         margin: 20px auto;
         gap: 20px;
+        justify-content: space-between;
         button{
             border:0;
             color:#fff;

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link, Outlet } from "react-router-dom";
 import { Button, CategoriesS, ConfirmModal } from '../../../styles/Categories';
 import { TaskContext } from '../../context/TaskContext';
+import DiscordBtn from '../../DiscordBtn';
 import Add from './Add';
 import CatTable from './catTable';
 import UpdateCategory from './UpdateCategory';
@@ -78,7 +79,7 @@ export default function Normativas(){
                     </div>
                 </div>
                 
-                
+            
             </CategoriesS>
         </>
         

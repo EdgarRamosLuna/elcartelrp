@@ -33,7 +33,7 @@ export default function WhitelistLE(){
                 </div>
                 <div className="content-nor" id="normativas">
                 {listacat}
-              
+                
 
                {/* <Accordion allowZeroExpanded>
                         <AccordionItem >

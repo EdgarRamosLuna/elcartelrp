@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HeaderE } from '../../styles/Header';
+import DiscordBtn from '../DiscordBtn';
 
 export default function Header(){
     const location = useLocation();
@@ -36,6 +37,7 @@ export default function Header(){
                 </ul>:""}
                 
             </div>
+            <DiscordBtn />
         </HeaderE>
     )
 }
