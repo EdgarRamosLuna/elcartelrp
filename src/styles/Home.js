@@ -104,4 +104,10 @@ export const DiscordBtnS = styled.div`
         max-width: 15%;
         filter: invert(100%);
     }
+    a{
+        cursor: url(/assets/img/cursor21.cur), auto;
+        &:hover{
+            cursor: url(/assets/img/cursor21.cur), auto;
+        }
+    }
 `;
