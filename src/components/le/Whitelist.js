@@ -4,15 +4,31 @@ import { AccordionD, NormativasLE } from '../../styles/Normativas'
 import AccordionHook from '../helpers/Accordion';
 import axios from 'axios';
 import ScrollTop from '../helpers/ScrollTop';
+import { useLocation } from 'react-router-dom';
 export default function WhitelistLE(){
+    const location = useLocation();
+    const path = location.pathname.replaceAll('/los-encapuchados/', '');
+    console.log(path);
     const [datadb, setDataDb] = useState([]);
+    
     useEffect(() => {
-        axios.get('https://elcartelrp.herokuapp.com/api/normativasle/getdata').then(res =>{
+
+        if(path == "ps4"){
+            axios.get('https://elcartelrp.herokuapp.com/api/normativasle/getdata').then(res =>{
           //  console.log(res.data);
             setDataDb(res.data);
             }).catch(err =>{
                 console.log(err);
             });
+        }else{
+            axios.get('https://elcartelrp.herokuapp.com/api/normativasle/getdata').then(res =>{
+          //  console.log(res.data);
+            setDataDb(res.data);
+            }).catch(err =>{
+                console.log(err);
+            });
+        }
+        
     }, []);
     const listacat = datadb.map(normativa =>{
         return(

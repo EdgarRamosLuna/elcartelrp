@@ -27,13 +27,13 @@ export default function Header(){
                     <li><Link to="whitelist" className={path == 'whitelist' ? "active": ""}>Normativas</Link></li>
                     <li><Link to="whitelist" className={path == 'about' ? "active": ""} >Los Encapuchados RP</Link></li>
                     <li><Link to="multimedia" className={path == 'multimedia' ? "active": ""}>Fotos / Videos</Link></li>
-                    <li><Link to="whitelist">Donaciones</Link></li>
+                    <li><Link to="ps4">Servidor PS4 <i class="fa-solid fa-gamepad"></i></Link></li>
                 </ul>
                 {menuOpen ? <ul className="mobile-menu" id="mm">
                     <li><Link to="whitelist" className={path == 'whitelist' ? "active": ""}>Normativas</Link></li>
                     <li><Link to="whitelist" className={path == 'about' ? "active": ""} >Los Encapuchados RP</Link></li>
                     <li><Link to="multimedia" className={path == 'multimedia' ? "active": ""}>Fotos / Videos</Link></li>
-                    <li><Link to="whitelist">Donaciones</Link></li>
+                    
                 </ul>:""}
                 
             </div>

@@ -184,6 +184,10 @@ export const HeaderE = styled.div`
                     text-decoration:none;
                     transition:all 0.2s;
                     cursor: url(/assets/img/cursor2.cur), auto;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
                     &:hover{
                         color:#fff;
                        

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { Button, CategoriesS, ConfirmModal } from '../../../styles/Categories';
 import { TaskContext } from '../../context/TaskContext';
 import DiscordBtn from '../../DiscordBtn';
@@ -41,7 +41,9 @@ export default function Normativas(){
         setShowCon(false);
     }
     
-
+    const location = useLocation();
+    const path = location.pathname.replaceAll('/los-encapuchados/', '');
+    console.log(path);
     const Confirm = ({children})=>{
       
       return(

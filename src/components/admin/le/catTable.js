@@ -1,8 +1,9 @@
 import "bootstrap/dist/css/bootstrap.css";
 import React, {useEffect, useState, useContext} from "react";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import { Col, Row, Table } from "react-bootstrap";
 import axios from 'axios';
+
 import {
   DatatableWrapper,
   Filter,
@@ -37,7 +38,14 @@ const STORY_HEADERS = [
 // Then, use it in a component.
 
 export default function CatTable(props) {
-  const {editBtn, newData, showCont, confirm, } = props;
+
+
+
+  const {editBtn, newData, showCont, confirm, actualPage } = props;
+
+
+    
+  console.log(actualPage);
   const [dataNor, setDataNor] = useState([]);
   const [idnor, setIdnor] = useState();
   const {removeImg, setImgCont, imgCont,} = useContext(TaskContext);
@@ -45,7 +53,7 @@ export default function CatTable(props) {
         axios.get('https://elcartelrp.herokuapp.com/api/normativasle/getdata').then(res =>{
           console.log(confirm);
             if(confirm == true){
-          
+             
               axios.post('https://elcartelrp.herokuapp.com/api/normativasle/delete', {idnor:idnor}).then(res =>{
                   
                   setDataNor(prev=>{

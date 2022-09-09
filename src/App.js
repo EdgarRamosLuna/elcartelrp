@@ -30,6 +30,7 @@ function App() {
           <Route path="/los-encapuchados" element={<HomeE />}>
             <Route path="multimedia" element={<Test />} />
             <Route path="whitelist" element={<WhitelistLE />} />
+            <Route path="ps4" element={<WhitelistLE />} />
           </Route>
           <Route path="/dashboard" element={<MenuDashboard />}>
               <Route path="main" element={<Dashboard />} />
